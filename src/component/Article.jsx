@@ -1,4 +1,8 @@
 import React, {Component} from 'react'
+// import styled from 'styled-components';
+import styled from '@emotion/styled';
+
+
 
 function Article(props) {
     const [count, setCount] = React.useState(0);
@@ -39,14 +43,14 @@ function Article(props) {
             <div>
                 <h1>Article Title</h1>
                 <h3>{count}</h3>
-                <button onClick={handleClick}>Click Me To Increase</button>
+                <Button onClick={handleClick}>Click Me To Increase</Button>
                 <br />
-                <button onClick={handleDecrease}>Click Me To Decrease</button>
+                <Button onClick={handleDecrease}>Click Me To Decrease</Button>
                 <br />
-                <button onClick={handleReset}>Reset</button>
+                <Button onClick={handleReset}>Reset</Button>
                 <br />
                 <input type="integer" value={inputValue} onChange={(e) => setInputValue(parseInt(e.target.value))} />
-                <button onClick={handleDivide}>Divide</button>
+                <Button yellow onClick={handleDivide}>Divide</Button>
                 <p>This is the article content.</p>
             </div>
         )
@@ -54,3 +58,13 @@ function Article(props) {
  
 
  export default Article
+
+ const Button = styled.button`
+    background-color: ${props => props.yellow ? 'blue' : 'red'};
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: 5px;
+    `
