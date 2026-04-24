@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 // import styled from 'styled-components';
 import styled from '@emotion/styled';
-import 
 
 
 
@@ -61,11 +60,35 @@ function Article(props) {
  export default Article
 
  const Button = styled.button`
-    background-color: ${props => props.yellow ? 'blue' : 'red'};
-    color: white;
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    border: 2px solid black;
-    margin: 5px;
-    `
+  background: ${props => props.yellow 
+    ? 'linear-gradient(135deg, #4facfe, #00f2fe)' 
+    : 'linear-gradient(135deg, #ff6a00, #ee0979)'};
+
+  color: white;
+  padding: 10px 16px;
+  min-width: 140px;
+  height: 45px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  &:active {
+    transform: scale(0.96);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+`;
